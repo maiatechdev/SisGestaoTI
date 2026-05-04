@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<title>Documento de Requisitos — SisGestão TI</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    color: #000;
+    background: #d0d0d0;
+  }
+
+  .page {
+    width: 21cm;
+    min-height: 29.7cm;
+    margin: 1cm auto;
+    background: #fff;
+    padding: 2.5cm 2.5cm 2.5cm 3cm;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; page-break-after: always; }
+    @page { size: A4; margin: 2.5cm 2.5cm 2.5cm 3cm; }
+  }
+
+  .cover { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; min-height: 25cm; }
+  .cover-logo img { width: 220px; }
+  .cover-institution { font-size: 13pt; font-weight: bold; line-height: 1.8; margin-bottom: 2cm; }
+  .cover-title { font-size: 14pt; font-weight: bold; letter-spacing: 1px; margin: 1.5cm 0; }
+  .cover-fields { text-align: left; width: 100%; margin-top: 1cm; font-size: 11pt; line-height: 2.5; }
+  .cover-fields span { border-bottom: 1px solid #000; display: inline-block; width: 12cm; }
+  .cover-city { font-size: 11pt; margin-top: auto; }
+
+  .sumario-title { text-align: center; font-size: 13pt; font-weight: bold; margin-bottom: 1.5cm; }
+  .sumario-item { display: flex; justify-content: space-between; margin-bottom: 0.3cm; font-size: 11pt; }
+  .sumario-item .dots { flex: 1; border-bottom: 1px dotted #000; margin: 0 0.3cm 0.1cm; }
+  .sumario-sub { padding-left: 1cm; }
+
+  .doc-header { text-align: center; margin-bottom: 1.5cm; }
+  .doc-header img { height: 60px; margin-bottom: 0.5cm; }
+
+  h1 { font-size: 12pt; font-weight: bold; margin: 0.8cm 0 0.4cm; }
+  h2 { font-size: 12pt; font-weight: bold; margin: 0.6cm 0 0.3cm; }
+  p  { text-align: justify; line-height: 1.5; margin-bottom: 0.3cm; font-size: 11pt; }
+  ul { margin: 0.2cm 0 0.3cm 1.2cm; }
+  ul li { line-height: 1.5; font-size: 11pt; margin-bottom: 0.15cm; }
+
+  .req { margin-bottom: 0.25cm; font-size: 11pt; line-height: 1.5; }
+  .req strong { font-weight: bold; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 10pt; margin: 0.4cm 0; }
+  th { background: #1e3a5f; color: #fff; padding: 6px 8px; text-align: left; }
+  td { padding: 5px 8px; border: 1px solid #ccc; vertical-align: top; }
+  tr:nth-child(even) td { background: #f5f5f5; }
+
+  .page-num { text-align: center; font-size: 10pt; margin-top: 1cm; color: #555; }
+  .assinatura-linha { border-top: 1px solid #000; width: 10cm; margin: 0 auto 1.5cm; text-align: center; padding-top: 0.2cm; font-size: 10pt; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ CAPA ══════════════════ -->
+<div class="page">
+  <div class="cover">
+    <div>
+      <div class="cover-logo">
+        <img src="../frontend/assets/logo.png" alt="SisGestão TI" />
+      </div>
+      <div class="cover-institution" style="margin-top:1cm">
+        UNIVERSIDADE CATÓLICA DO SALVADOR — UCSal<br/>
+        ESCOLA DE COMPUTAÇÃO E TECNOLOGIA DA INFORMAÇÃO — ECTI
+      </div>
+    </div>
+
+    <div class="cover-title">DOCUMENTO DE REQUISITOS DO SOFTWARE</div>
+
+    <div class="cover-fields">
+      <div>Empresa Desenvolvedora: <span>MaiaTechDev</span></div>
+      <div style="padding-left:2.5cm">Integrantes: <span>André Maia</span></div>
+      <div style="padding-left:2.5cm">Empresa Cliente: <span>SEMDESC — Secretaria de Desenvolvimento Social</span></div>
+    </div>
+
+    <div class="cover-city">Salvador, 2025.2</div>
+  </div>
+  <div class="page-num">1</div>
+</div>
+
+<!-- ══════════════════ SUMÁRIO ══════════════════ -->
+<div class="page">
+  <div class="doc-header"><img src="../frontend/assets/logo.png" alt="SisGestão TI" /></div>
+  <div class="sumario-title">SUMÁRIO</div>
+
+  <div class="sumario-item"><span>1. Introdução</span><span class="dots"></span><span>3</span></div>
+  <div class="sumario-item"><span>2. Escopo do Sistema</span><span class="dots"></span><span>3</span></div>
+  <div class="sumario-item"><span>3. Definições, Acrônimos e Abreviações</span><span class="dots"></span><span>3</span></div>
+  <div class="sumario-item"><span>4. Visão Geral do Produto</span><span class="dots"></span><span>3</span></div>
+  <div class="sumario-item"><span>5. Requisitos Funcionais</span><span class="dots"></span><span>4</span></div>
+  <div class="sumario-item"><span>6. Requisitos Não Funcionais</span><span class="dots"></span><span>4</span></div>
+  <div class="sumario-item"><span>7. User Stories</span><span class="dots"></span><span>4</span></div>
+  <div class="sumario-item"><span>8. Casos de Uso</span><span class="dots"></span><span>5</span></div>
+  <div class="sumario-item"><span>9. Regras de Negócio</span><span class="dots"></span><span>5</span></div>
+  <div class="sumario-item"><span>10. Protótipos de Interface</span><span class="dots"></span><span>5</span></div>
+  <div class="sumario-item"><span>11. Critérios de Aceitação</span><span class="dots"></span><span>5</span></div>
+  <div class="sumario-item"><span>12. Rastreabilidade</span><span class="dots"></span><span>5</span></div>
+  <div class="sumario-item"><span>13. Anexos</span><span class="dots"></span><span>5</span></div>
+
+  <div class="page-num">2</div>
+</div>
+
+<!-- ══════════════════ SEÇÕES 1–4 ══════════════════ -->
+<div class="page">
+  <div class="doc-header"><img src="../frontend/assets/logo.png" alt="SisGestão TI" /></div>
+
+  <h1>1. Introdução</h1>
+  <p>Este documento especifica os requisitos de software do <strong>SisGestão TI</strong>, sistema web destinado à gestão centralizada de chamados de suporte de TI e comunicados internos da SEMDESC — Secretaria Municipal de Desenvolvimento Econômico e Social. O sistema visa substituir o processo manual e descentralizado de registro de chamados, oferecendo rastreabilidade, comunicação em tempo real e controle de acesso baseado em perfis de usuário. O público-alvo são os colaboradores da SEMDESC (usuários finais), a equipe técnica de TI (técnicos) e os gestores (administradores).</p>
+
+  <h1>2. Escopo do Sistema</h1>
+  <p><strong>Inclui:</strong> Autenticação com JWT e controle de acesso por perfil (RBAC); abertura, listagem e acompanhamento de chamados de TI com categorização por prioridade e categoria; chat em tempo real por chamado com persistência de histórico via WebSocket; dashboards personalizados por perfil; módulo de comunicados internos com fluxo de criação, aprovação e publicação.</p>
+  <p><strong>Exclui:</strong> Integração com sistemas externos de monitoramento de infraestrutura; aplicativo mobile nativo; módulo financeiro; integração com Active Directory ou LDAP; exportação de relatórios em PDF ou Excel; gestão de inventário de ativos de TI.</p>
+
+  <h1>3. Definições, Acrônimos e Abreviações</h1>
+  <ul>
+    <li><strong>RBAC</strong> — Role-Based Access Control (Controle de Acesso Baseado em Perfis)</li>
+    <li><strong>JWT</strong> — JSON Web Token (token de autenticação stateless)</li>
+    <li><strong>WS</strong> — WebSocket (protocolo de comunicação bidirecional em tempo real)</li>
+    <li><strong>RF</strong> — Requisito Funcional</li>
+    <li><strong>RNF</strong> — Requisito Não Funcional</li>
+    <li><strong>US</strong> — User Story (história de usuário)</li>
+    <li><strong>RB</strong> — Regra de Negócio</li>
+    <li><strong>C.I</strong> — Comunicado Interno</li>
+    <li><strong>SPA</strong> — Single Page Application (aplicação de página única)</li>
+    <li><strong>SEMDESC</strong> — Secretaria Municipal de Desenvolvimento Econômico e Social</li>
+  </ul>
+
+  <h1>4. Visão Geral do Produto</h1>
+  <p>O SisGestão TI é uma aplicação web do tipo SPA (Single Page Application), acessada por qualquer navegador moderno sem necessidade de instalação. O sistema é composto por dois módulos principais:</p>
+  <ul>
+    <li><strong>Backend REST API + WebSocket</strong>: construído em Node.js com Express e TypeScript, responsável pela lógica de negócio, autenticação, persistência em banco SQLite e comunicação em tempo real.</li>
+    <li><strong>Frontend SPA</strong>: interface em HTML5, CSS puro e JavaScript vanilla, com roteador hash e sidebar de navegação adaptada ao perfil do usuário logado.</li>
+  </ul>
+  <p>O acesso é controlado por três perfis: <strong>user</strong> (colaborador), <strong>ti</strong> (técnico de suporte) e <strong>admin</strong> (gestor/administrador), cada um com permissões e visualizações específicas.</p>
+
+  <div class="page-num">3</div>
+</div>
+
+<!-- ══════════════════ SEÇÕES 5–7 ══════════════════ -->
+<div class="page">
+  <div class="doc-header"><img src="../frontend/assets/logo.png" alt="SisGestão TI" /></div>
+
+  <h1>5. Requisitos Funcionais</h1>
+  <div class="req"><strong>RF-001:</strong> O sistema deve permitir o login com e-mail e senha, retornando um token JWT com validade de 8 horas.</div>
+  <div class="req"><strong>RF-002:</strong> O sistema deve diferenciar três perfis de acesso: usuário (user), técnico de TI (ti) e administrador (admin).</div>
+  <div class="req"><strong>RF-003:</strong> O sistema deve permitir que qualquer usuário autenticado abra um chamado informando título, descrição, prioridade e categoria.</div>
+  <div class="req"><strong>RF-004:</strong> O sistema deve exibir ao usuário comum apenas seus próprios chamados; técnicos e administradores visualizam todos.</div>
+  <div class="req"><strong>RF-005:</strong> O sistema deve permitir filtrar chamados por status, prioridade e categoria via parâmetros de consulta.</div>
+  <div class="req"><strong>RF-006:</strong> O sistema deve permitir que técnicos e administradores atualizem o status de um chamado (aberto, em andamento, resolvido, fechado).</div>
+  <div class="req"><strong>RF-007:</strong> O sistema deve permitir que técnicos e administradores atribuam e removam a atribuição de chamados a si mesmos.</div>
+  <div class="req"><strong>RF-008:</strong> O sistema deve disponibilizar um chat em tempo real por chamado via WebSocket, autenticado por token JWT.</div>
+  <div class="req"><strong>RF-009:</strong> O sistema deve exibir o histórico completo de mensagens ao conectar ao chat de um chamado.</div>
+  <div class="req"><strong>RF-010:</strong> O sistema deve persistir todas as mensagens de chat no banco de dados.</div>
+  <div class="req"><strong>RF-011:</strong> O sistema deve permitir que técnicos e administradores criem comunicados internos.</div>
+  <div class="req"><strong>RF-012:</strong> Comunicados criados por técnicos devem ficar com status "pendente" até aprovação de um administrador.</div>
+  <div class="req"><strong>RF-013:</strong> Comunicados criados por administradores devem ser publicados imediatamente com status "aprovado".</div>
+  <div class="req"><strong>RF-014:</strong> O sistema deve permitir que administradores aprovem ou rejeitem comunicados com status "pendente".</div>
+  <div class="req"><strong>RF-015:</strong> O sistema deve exibir dashboards personalizados de acordo com o perfil do usuário autenticado.</div>
+  <div class="req"><strong>RF-016:</strong> Administradores devem poder excluir comunicados internos.</div>
+
+  <h1>6. Requisitos Não Funcionais</h1>
+  <div class="req"><strong>RNF-001:</strong> O sistema deve ser acessível via navegador web moderno sem instalação de software adicional.</div>
+  <div class="req"><strong>RNF-002:</strong> As senhas devem ser armazenadas com hash bcrypt, fator de custo mínimo 10.</div>
+  <div class="req"><strong>RNF-003:</strong> O token JWT deve expirar em 8 horas e ser validado em todas as requisições às rotas protegidas.</div>
+  <div class="req"><strong>RNF-004:</strong> O sistema deve responder a requisições REST em menos de 500ms em condições normais de operação.</div>
+  <div class="req"><strong>RNF-005:</strong> A interface deve ser funcional em resoluções de tela a partir de 1024×768 pixels.</div>
+  <div class="req"><strong>RNF-006:</strong> O código do backend deve ser escrito em TypeScript para garantia de tipagem estática.</div>
+  <div class="req"><strong>RNF-007:</strong> O banco de dados não deve depender de instalação de servidor externo (SQLite via sql.js/WASM).</div>
+  <div class="req"><strong>RNF-008:</strong> A conexão WebSocket deve ser autenticada por token JWT na URL de conexão.</div>
+  <div class="req"><strong>RNF-009:</strong> O sistema deve impedir acesso a recursos de outros usuários por meio de validação de propriedade no backend.</div>
+
+  <h1>7. User Stories</h1>
+  <div class="req"><strong>US-001:</strong> Como <em>usuário</em>, eu quero abrir um chamado de TI para registrar formalmente um problema e acompanhar sua resolução.</div>
+  <div class="req"><strong>US-002:</strong> Como <em>usuário</em>, eu quero enviar mensagens no chat do meu chamado para me comunicar diretamente com o técnico responsável.</div>
+  <div class="req"><strong>US-003:</strong> Como <em>usuário</em>, eu quero ver o dashboard com o status dos meus chamados para ter uma visão rápida do andamento dos meus atendimentos.</div>
+  <div class="req"><strong>US-004:</strong> Como <em>técnico de TI</em>, eu quero visualizar todos os chamados abertos para priorizar e organizar os atendimentos da equipe.</div>
+  <div class="req"><strong>US-005:</strong> Como <em>técnico de TI</em>, eu quero atribuir chamados a mim mesmo para sinalizar que estou trabalhando no atendimento.</div>
+  <div class="req"><strong>US-006:</strong> Como <em>técnico de TI</em>, eu quero atualizar o status de um chamado para manter o solicitante informado sobre o progresso.</div>
+  <div class="req"><strong>US-007:</strong> Como <em>técnico de TI</em>, eu quero criar comunicados internos para informar os usuários sobre manutenções programadas ou avisos importantes.</div>
+  <div class="req"><strong>US-008:</strong> Como <em>administrador</em>, eu quero aprovar ou rejeitar comunicados criados por técnicos para garantir a qualidade das informações publicadas.</div>
+  <div class="req"><strong>US-009:</strong> Como <em>administrador</em>, eu quero visualizar um dashboard com métricas gerais do sistema para monitorar a performance do suporte de TI.</div>
+  <div class="req"><strong>US-010:</strong> Como <em>administrador</em>, eu quero ver chamados críticos em destaque no dashboard para priorizar ações imediatas.</div>
+
+  <div class="page-num">4</div>
+</div>
+
+<!-- ══════════════════ SEÇÕES 8–13 ══════════════════ -->
+<div class="page">
+  <div class="doc-header"><img src="../frontend/assets/logo.png" alt="SisGestão TI" /></div>
+
+  <h1>8. Casos de Uso</h1>
+  <div class="req"><strong>UC-001 — Gerenciar Chamados (Técnico/Admin):</strong> O técnico ou administrador acessa a lista de chamados, filtra por status ou prioridade, seleciona um chamado, atualiza seu status, se auto-atribui e interage via chat em tempo real.</div>
+  <div class="req"><strong>UC-002 — Abrir Chamado (Usuário):</strong> O usuário preenche o formulário com título, descrição, prioridade e categoria; o sistema cria o chamado com status "aberto" e redireciona para a tela de detalhe.</div>
+  <div class="req"><strong>UC-003 — Publicar Comunicado (Admin):</strong> O administrador cria um comunicado que é publicado imediatamente; técnicos criam comunicados que entram em fila de aprovação.</div>
+  <div class="req"><strong>UC-004 — Aprovar/Rejeitar Comunicado (Admin):</strong> O administrador visualiza comunicados pendentes no dashboard ou na lista de comunicados e os aprova ou rejeita com um clique.</div>
+
+  <h1>9. Regras de Negócio</h1>
+  <div class="req"><strong>RB-001:</strong> Apenas técnicos de TI e administradores podem atualizar o status de chamados; usuários comuns não têm esta permissão.</div>
+  <div class="req"><strong>RB-002:</strong> Um usuário comum somente acessa seus próprios chamados; tentativas de acessar chamados de outros usuários retornam erro 403.</div>
+  <div class="req"><strong>RB-003:</strong> Comunicados criados por técnicos iniciam com status "pendente" e só ficam visíveis a todos os usuários após aprovação de um administrador.</div>
+  <div class="req"><strong>RB-004:</strong> Um comunicado aprovado ou rejeitado não pode ter seu status alterado novamente; o fluxo é unidirecional (pendente → aprovado | rejeitado).</div>
+  <div class="req"><strong>RB-005:</strong> O token JWT deve ser incluído em todas as requisições às rotas protegidas no header <em>Authorization</em> como Bearer token.</div>
+  <div class="req"><strong>RB-006:</strong> A conexão WebSocket de chat exige token JWT válido e ID de ticket acessível pelo usuário; conexões inválidas são encerradas com código 4001 ou 4003.</div>
+  <div class="req"><strong>RB-007:</strong> Chamados recém-criados recebem automaticamente o status "aberto" e o usuário criador como solicitante.</div>
+
+  <h1>10. Protótipos de Interface</h1>
+  <p>O sistema foi desenvolvido com interface funcional em HTML/CSS puro. As telas implementadas incluem: tela de login, dashboard adaptativo (3 versões por perfil), lista de chamados com filtros, formulário de abertura de chamado, detalhe do chamado com chat em tempo real, lista de comunicados com ações de aprovação/rejeição e formulário de criação de comunicado. O repositório do projeto está disponível em: <strong>https://github.com/maiatechdev/SisGestaoTI</strong></p>
+
+  <h1>11. Critérios de Aceitação</h1>
+  <div class="req"><strong>RF-001</strong> será aceito quando o login retornar token JWT válido para credenciais corretas e erro 401 para credenciais inválidas.</div>
+  <div class="req"><strong>RF-004</strong> será aceito quando usuário comum listar apenas seus próprios chamados e técnicos/admin visualizarem todos.</div>
+  <div class="req"><strong>RF-008</strong> será aceito quando dois clientes conectados ao mesmo chamado trocarem mensagens em tempo real, com persistência confirmada via GET do detalhe do chamado.</div>
+  <div class="req"><strong>RF-012/013</strong> serão aceitos quando comunicado de técnico iniciar como "pendente" e comunicado de admin iniciar como "aprovado" automaticamente.</div>
+
+  <h1>12. Rastreabilidade</h1>
+  <table>
+    <thead><tr><th>Requisito</th><th>User Story</th><th>Regra de Negócio</th></tr></thead>
+    <tbody>
+      <tr><td>RF-001, RF-002</td><td>US-001 a US-010</td><td>RB-005</td></tr>
+      <tr><td>RF-003</td><td>US-001</td><td>RB-007</td></tr>
+      <tr><td>RF-004, RF-005</td><td>US-003, US-004</td><td>RB-002</td></tr>
+      <tr><td>RF-006, RF-007</td><td>US-005, US-006</td><td>RB-001</td></tr>
+      <tr><td>RF-008, RF-009, RF-010</td><td>US-002</td><td>RB-006</td></tr>
+      <tr><td>RF-011, RF-012, RF-013, RF-014</td><td>US-007, US-008</td><td>RB-003, RB-004</td></tr>
+      <tr><td>RF-015</td><td>US-003, US-009, US-010</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h1>13. Anexos</h1>
+  <p>Repositório GitHub: <strong>https://github.com/maiatechdev/SisGestaoTI</strong></p>
+  <p>Tecnologias utilizadas: Node.js 24, Express 4, TypeScript 5, sql.js 1.12 (SQLite/WASM), ws 8, jsonwebtoken 9, bcryptjs 2, HTML5, CSS3, JavaScript ES2020.</p>
+  <p>Estrutura de banco de dados: 4 tabelas (<em>users</em>, <em>tickets</em>, <em>messages</em>, <em>announcements</em>) com chaves estrangeiras e restrições de integridade referencial.</p>
+
+  <div class="page-num">5</div>
+</div>
+
+<!-- ══════════════════ ASSINATURAS ══════════════════ -->
+<div class="page">
+  <div class="doc-header"><img src="../frontend/assets/logo.png" alt="SisGestão TI" /></div>
+
+  <div style="text-align:center; margin-top:2cm">
+    <p style="margin-bottom:0.3cm">Assinaturas dos Integrantes da Equipe:</p>
+    <p style="margin-bottom:2cm; font-size:10pt; color:#555">(Assinar com gov.br)</p>
+  </div>
+
+  <div class="assinatura-linha">André Maia</div>
+  <div class="assinatura-linha">&nbsp;</div>
+  <div class="assinatura-linha">&nbsp;</div>
+  <div class="assinatura-linha">&nbsp;</div>
+  <div class="assinatura-linha">&nbsp;</div>
+
+  <div class="page-num">6</div>
+</div>
+
+</body>
+</html>

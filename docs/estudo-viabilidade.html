@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<title>Estudo de Viabilidade — SisGestão TI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Arial');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    color: #000;
+    background: #d0d0d0;
+  }
+
+  .page {
+    width: 21cm;
+    min-height: 29.7cm;
+    margin: 1cm auto;
+    background: #fff;
+    padding: 2.5cm 2.5cm 2.5cm 3cm;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; page-break-after: always; }
+    @page { size: A4; margin: 2.5cm 2.5cm 2.5cm 3cm; }
+  }
+
+  /* Capa */
+  .cover { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; min-height: 25cm; }
+  .cover-logo img { width: 220px; }
+  .cover-institution { font-size: 13pt; font-weight: bold; line-height: 1.8; margin-bottom: 2cm; }
+  .cover-title { font-size: 14pt; font-weight: bold; letter-spacing: 1px; margin: 1.5cm 0; }
+  .cover-fields { text-align: left; width: 100%; margin-top: 1cm; font-size: 11pt; line-height: 2.5; }
+  .cover-fields span { border-bottom: 1px solid #000; display: inline-block; width: 12cm; }
+  .cover-city { font-size: 11pt; margin-top: auto; }
+
+  /* Sumário */
+  .sumario-title { text-align: center; font-size: 13pt; font-weight: bold; margin-bottom: 1.5cm; }
+  .sumario-item { display: flex; justify-content: space-between; margin-bottom: 0.3cm; font-size: 11pt; }
+  .sumario-item .dots { flex: 1; border-bottom: 1px dotted #000; margin: 0 0.3cm 0.1cm; }
+  .sumario-sub { padding-left: 1cm; }
+
+  /* Conteúdo */
+  .doc-header { text-align: center; margin-bottom: 1.5cm; }
+  .doc-header img { height: 60px; margin-bottom: 0.5cm; }
+
+  h1 { font-size: 12pt; font-weight: bold; margin: 0.8cm 0 0.4cm; }
+  h2 { font-size: 12pt; font-weight: bold; margin: 0.8cm 0 0.4cm; }
+  p  { text-align: justify; line-height: 1.5; margin-bottom: 0.3cm; font-size: 11pt; }
+  ul { margin: 0.2cm 0 0.3cm 1.2cm; }
+  ul li { line-height: 1.5; font-size: 11pt; margin-bottom: 0.1cm; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 10pt; margin: 0.4cm 0; }
+  th { background: #1e3a5f; color: #fff; padding: 6px 8px; text-align: left; }
+  td { padding: 5px 8px; border: 1px solid #ccc; vertical-align: top; }
+  tr:nth-child(even) td { background: #f5f5f5; }
+
+  .page-num { text-align: center; font-size: 10pt; margin-top: 1cm; color: #555; }
+
+  .assinaturas { margin-top: 2cm; }
+  .assinaturas p { margin-bottom: 1.5cm; }
+  .assinatura-linha { border-top: 1px solid #000; width: 10cm; margin: 0 auto 1.5cm; text-align: center; padding-top: 0.2cm; font-size: 10pt; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ CAPA ══════════════════ -->
+<div class="page">
+  <div class="cover">
+    <div>
+      <div class="cover-logo">
+        <img src="../frontend/assets/logo.png" alt="SisGestão TI" />
+      </div>
+      <div class="cover-institution" style="margin-top:1cm">
+        UNIVERSIDADE CATÓLICA DO SALVADOR — UCSal<br/>
+        ESCOLA DE COMPUTAÇÃO E TECNOLOGIA DA INFORMAÇÃO — ECTI
+      </div>
+    </div>
+
+    <div class="cover-title">ESTUDO DE VIABILIDADE DO SOFTWARE</div>
+
+    <div class="cover-fields">
+      <div>Empresa Desenvolvedora: <span>MaiaTechDev</span></div>
+      <div style="padding-left:2.5cm">Integrantes: <span>André Maia</span></div>
+      <div style="padding-left:2.5cm">Empresa Cliente: <span>SEMDESC — Secretaria de Desenvolvimento Social</span></div>
+    </div>
+
+    <div class="cover-city">Salvador, 2025.2</div>
+  </div>
+  <div class="page-num">1</div>
+</div>
+
+<!-- ══════════════════ SUMÁRIO ══════════════════ -->
+<div class="page">
+  <div class="doc-header">
+    <img src="../frontend/assets/logo.png" alt="SisGestão TI" />
+  </div>
+
+  <div class="sumario-title">SUMÁRIO</div>
+
+  <div class="sumario-item"><span>1. Introdução</span><span class="dots"></span><span>3</span></div>
+  <div class="sumario-item"><span>2. Objetivos</span><span class="dots"></span><span>3</span></div>
+  <div class="sumario-item"><span>3. Escopo do Sistema</span><span class="dots"></span><span>3</span></div>
+  <div class="sumario-item"><span>4. Análise de Viabilidade</span><span class="dots"></span><span>4</span></div>
+  <div class="sumario-item sumario-sub"><span>4.1 Viabilidade Técnica</span><span class="dots"></span><span>4</span></div>
+  <div class="sumario-item sumario-sub"><span>4.2 Viabilidade Econômica</span><span class="dots"></span><span>4</span></div>
+  <div class="sumario-item sumario-sub"><span>4.3 Viabilidade Operacional</span><span class="dots"></span><span>4</span></div>
+  <div class="sumario-item sumario-sub"><span>4.4 Viabilidade de Cronograma</span><span class="dots"></span><span>4</span></div>
+  <div class="sumario-item"><span>5. Análise de Riscos e Mitigações</span><span class="dots"></span><span>4</span></div>
+  <div class="sumario-item"><span>6. Benefícios Esperados</span><span class="dots"></span><span>5</span></div>
+  <div class="sumario-item"><span>7. Conclusão</span><span class="dots"></span><span>5</span></div>
+
+  <div class="page-num">2</div>
+</div>
+
+<!-- ══════════════════ CONTEÚDO ══════════════════ -->
+<div class="page">
+  <div class="doc-header">
+    <img src="../frontend/assets/logo.png" alt="SisGestão TI" />
+  </div>
+
+  <h1>1. Introdução</h1>
+  <p>A Secretaria Municipal de Desenvolvimento Econômico e Social (SEMDESC) enfrentava dificuldades significativas na gestão do suporte de TI interno. Chamados eram registrados de forma descentralizada — por e-mail, WhatsApp e comunicação verbal — sem rastreamento, histórico de atendimento ou indicadores de desempenho. Comunicados internos da equipe de TI eram distribuídos por canais informais, sem controle de publicação ou aprovação.</p>
+  <p>O presente estudo analisa a viabilidade de desenvolver o <strong>SisGestão TI</strong>, um sistema web centralizado para gestão de chamados de suporte de TI e comunicados internos, com controle de acesso baseado em perfis de usuário (RBAC) e comunicação em tempo real via WebSocket.</p>
+
+  <h1>2. Objetivos</h1>
+  <p><strong>Objetivo Geral:</strong> Avaliar a viabilidade de desenvolver um sistema web para centralizar e otimizar a gestão de chamados de TI e comunicados internos da SEMDESC.</p>
+  <p><strong>Objetivos Específicos:</strong></p>
+  <ul>
+    <li>Identificar os requisitos iniciais do sistema a partir das necessidades da equipe de TI e dos usuários finais.</li>
+    <li>Analisar os custos, riscos e benefícios envolvidos no desenvolvimento da solução.</li>
+    <li>Determinar a viabilidade técnica, econômica, operacional e de cronograma do projeto.</li>
+    <li>Propor uma solução que possa ser mantida e evoluída pela própria equipe de TI da instituição.</li>
+  </ul>
+
+  <h1>3. Escopo do Sistema</h1>
+  <p><strong>Inclui:</strong> Abertura e acompanhamento de chamados de TI com categorização por prioridade e categoria; chat em tempo real por chamado com persistência de histórico; painel de controle (dashboard) adaptado por perfil de usuário (user, ti, admin); módulo de comunicados internos com fluxo de aprovação; autenticação com JSON Web Token (JWT) e controle de acesso por role (RBAC).</p>
+  <p><strong>Exclui:</strong> Integração com sistemas externos de monitoramento de infraestrutura (ex.: Zabbix, Nagios, Grafana); aplicativo mobile nativo (iOS/Android); módulo financeiro, de faturamento ou de gestão de ativos; integração com Active Directory (LDAP/AD) para autenticação corporativa; relatórios exportáveis em PDF ou Excel.</p>
+
+  <div class="page-num">3</div>
+</div>
+
+<div class="page">
+  <div class="doc-header">
+    <img src="../frontend/assets/logo.png" alt="SisGestão TI" />
+  </div>
+
+  <h1>4. Análise de Viabilidade</h1>
+
+  <h2>4.1 Viabilidade Técnica</h2>
+  <p>A equipe de desenvolvimento domina as tecnologias utilizadas no projeto: HTML5, CSS puro, JavaScript, TypeScript, Node.js e Express. O banco de dados SQLite, acessado via <em>sql.js</em> (implementação em WebAssembly), elimina a necessidade de instalação e configuração de um servidor de banco de dados, simplificando a implantação. A comunicação em tempo real foi implementada com o protocolo WebSocket nativo, sem dependências de serviços externos. Todos os computadores da SEMDESC, equipados com navegadores modernos, atendem aos requisitos mínimos do sistema sem necessidade de qualquer instalação adicional.</p>
+
+  <h2>4.2 Viabilidade Econômica</h2>
+  <p>O projeto foi desenvolvido utilizando exclusivamente tecnologias open-source e gratuitas, sem custos de licenciamento de software. O investimento concentra-se nas horas de desenvolvimento da equipe. Estima-se uma redução de 40% no tempo médio de resolução de chamados, com a eliminação de retrabalho causado por chamados sem rastreamento. A economia projetada em horas de trabalho da equipe de TI no primeiro ano supera em mais de três vezes o custo de desenvolvimento estimado.</p>
+
+  <h2>4.3 Viabilidade Operacional</h2>
+  <p>O sistema é acessado integralmente via navegador web, sem necessidade de instalação em estações de trabalho. Os funcionários da SEMDESC já utilizam computadores com acesso à rede interna diariamente. A interface foi projetada com foco em usabilidade, com navegação intuitiva por barra lateral (sidebar), dashboards adaptados ao perfil de cada usuário e fluxos simplificados de abertura e acompanhamento de chamados, reduzindo a curva de aprendizado ao mínimo.</p>
+
+  <h2>4.4 Viabilidade de Cronograma</h2>
+  <p>O sistema foi desenvolvido em 7 etapas sequenciais: (1) estrutura do projeto e banco de dados, (2) autenticação e RBAC, (3) CRUD de chamados, (4) chat em tempo real via WebSocket, (5) módulo de comunicados internos, (6) frontend base com roteador e sidebar, e (7) telas principais com dashboards. O cronograma total foi executado dentro do semestre letivo 2025.2, demonstrando total compatibilidade com o prazo disponível.</p>
+
+  <h1>5. Análise de Riscos e Mitigações</h1>
+
+  <table>
+    <thead>
+      <tr><th>Risco</th><th>Probabilidade</th><th>Impacto</th><th>Mitigação</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Biblioteca nativa (better-sqlite3) sem suporte ao Node.js 24</td>
+        <td>Alta</td><td>Alto</td>
+        <td>Substituição por sql.js (WebAssembly), sem necessidade de compilação nativa — risco já mitigado durante o desenvolvimento</td>
+      </tr>
+      <tr>
+        <td>Resistência dos usuários à adoção da nova ferramenta</td>
+        <td>Média</td><td>Médio</td>
+        <td>Interface intuitiva, contas de demonstração e sessão de treinamento com a equipe antes do go-live</td>
+      </tr>
+      <tr>
+        <td>Perda de dados por ausência de rotina de backup</td>
+        <td>Baixa</td><td>Alto</td>
+        <td>Procedimento de backup periódico do arquivo .db documentado; migração futura para PostgreSQL em servidor gerenciado</td>
+      </tr>
+      <tr>
+        <td>Vulnerabilidade de autenticação ou autorização</td>
+        <td>Baixa</td><td>Alto</td>
+        <td>JWT com expiração de 8h, hash bcrypt (fator 10) para senhas, validação de roles em todas as rotas protegidas</td>
+      </tr>
+      <tr>
+        <td>Indisponibilidade do servidor local em caso de manutenção</td>
+        <td>Média</td><td>Alto</td>
+        <td>Planejamento de migração para servidor dedicado ou ambiente de nuvem (ex.: VPS, Railway, Render) para produção</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-num">4</div>
+</div>
+
+<div class="page">
+  <div class="doc-header">
+    <img src="../frontend/assets/logo.png" alt="SisGestão TI" />
+  </div>
+
+  <h1>6. Benefícios Esperados</h1>
+  <p><strong>Benefícios Quantitativos:</strong></p>
+  <ul>
+    <li>Redução estimada de 40% no tempo médio de resolução de chamados de TI.</li>
+    <li>Eliminação de 100% dos chamados perdidos ou sem registro formal.</li>
+    <li>Economia de aproximadamente 5 horas semanais da equipe de TI, atualmente dedicadas à triagem manual de solicitações.</li>
+    <li>Redução do volume de mensagens informais (WhatsApp/e-mail) relacionadas a suporte de TI.</li>
+  </ul>
+  <p><strong>Benefícios Qualitativos:</strong></p>
+  <ul>
+    <li>Rastreabilidade completa de todas as solicitações de TI, com histórico de mensagens e auditoria de mudanças de status.</li>
+    <li>Centralização dos comunicados internos com fluxo de aprovação controlado, garantindo a qualidade das informações publicadas.</li>
+    <li>Dashboards personalizados por perfil, fornecendo métricas em tempo real para tomada de decisão gerencial.</li>
+    <li>Melhoria na percepção de qualidade do suporte de TI pelos usuários da SEMDESC.</li>
+    <li>Base tecnológica escalável, que permite evoluções futuras como integração com Active Directory e geração de relatórios.</li>
+  </ul>
+
+  <h1>7. Conclusão</h1>
+  <p>Diante da análise realizada neste estudo, recomenda-se o desenvolvimento e a implantação do <strong>SisGestão TI</strong> na infraestrutura da SEMDESC. O sistema demonstrou ser:</p>
+  <ul>
+    <li><strong>Tecnicamente viável</strong>: a equipe domina todas as tecnologias utilizadas e o único risco técnico identificado (compatibilidade de biblioteca nativa) foi mitigado com sucesso durante o desenvolvimento.</li>
+    <li><strong>Economicamente vantajoso</strong>: desenvolvido com tecnologias gratuitas e open-source, com retorno estimado superior ao custo de desenvolvimento já no primeiro ano de operação.</li>
+    <li><strong>Operacionalmente adequado</strong>: acessível via navegador sem instalação, com interface intuitiva adaptada ao contexto de uso da instituição.</li>
+    <li><strong>Compatível com o cronograma</strong>: todas as 7 etapas foram concluídas dentro do semestre letivo 2025.2.</li>
+  </ul>
+  <p>O SisGestão TI representa uma solução robusta, segura e de fácil adoção, capaz de transformar o processo de suporte de TI da SEMDESC de uma gestão informal e reativa para um modelo estruturado, rastreável e orientado a dados.</p>
+
+  <div class="page-num">5</div>
+</div>
+
+<!-- ══════════════════ ASSINATURAS ══════════════════ -->
+<div class="page">
+  <div class="doc-header">
+    <img src="../frontend/assets/logo.png" alt="SisGestão TI" />
+  </div>
+
+  <div style="text-align:center; margin-top:2cm">
+    <p style="margin-bottom:0.3cm">Assinaturas dos Integrantes da Equipe:</p>
+    <p style="margin-bottom:2cm; font-size:10pt; color:#555">(Assinar com gov.br)</p>
+  </div>
+
+  <div class="assinatura-linha">André Maia</div>
+  <div class="assinatura-linha">&nbsp;</div>
+  <div class="assinatura-linha">&nbsp;</div>
+  <div class="assinatura-linha">&nbsp;</div>
+  <div class="assinatura-linha">&nbsp;</div>
+
+  <div class="page-num">6</div>
+</div>
+
+</body>
+</html>
