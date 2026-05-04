@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SisGestão TI — Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <div class="login-box">
+      <div class="login-header">
+        <div class="login-logo">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect width="40" height="40" rx="10" fill="#2563eb"/>
+            <path d="M20 8C13.373 8 8 13.373 8 20s5.373 12 12 12 12-5.373 12-12S26.627 8 20 8zm0 5a3 3 0 110 6 3 3 0 010-6zm0 17a9 9 0 01-7-3.35C13.04 24.9 16.32 24 20 24s6.96.9 7 2.65A9 9 0 0120 30z" fill="white"/>
+          </svg>
+        </div>
+        <h1>SisGestão TI</h1>
+        <p>Sistema de Gestão de Chamados</p>
+      </div>
+
+      <form id="loginForm" class="login-form">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="seu@email.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="••••••••"
+            required
+            autocomplete="current-password"
+          />
+        </div>
+
+        <div id="loginError" class="error-message hidden"></div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="loginBtn">
+          Entrar
+        </button>
+      </form>
+
+      <div class="login-hint">
+        <strong>Contas de teste:</strong>
+        <div class="hint-accounts">
+          <span>admin@helpdesk.com / admin123</span>
+          <span>ti@helpdesk.com / ti123456</span>
+          <span>user@helpdesk.com / user1234</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
